@@ -8,6 +8,7 @@ target 'social-app' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'FBSDKLoginKit'
 
   # Pods for social-app
 
