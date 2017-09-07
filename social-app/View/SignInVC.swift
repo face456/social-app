@@ -13,6 +13,10 @@ import Firebase
 
 class SignInVC: UIViewController {
 
+    @IBOutlet weak var passwordField: FunctionalField!
+    
+    @IBOutlet weak var emailField: FunctionalField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,11 +30,11 @@ class SignInVC: UIViewController {
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
-                print ("Phil: Unable to authenticate with Facebook - \(String(describing: error))")
+                print ("Admin: Unable to authenticate with Facebook - \(String(describing: error))")
             } else if result?.isCancelled == true {
-                print ("Phil: User cancelled Facebook authentication")
+                print ("Admin: User cancelled Facebook authentication")
             } else {
-                print ("Phil: Successfully authenticated with Facebook")
+                print ("Admin: Successfully authenticated with Facebook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
             }
@@ -39,11 +43,28 @@ class SignInVC: UIViewController {
     func firebaseAuth(_ credential: AuthCredential) {
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if error != nil {
-                print("Phil: Unable to authenticate with Firebase -\(String(describing: error))")
+                print("Admin: Unable to authenticate with Firebase -\(String(describing: error))")
             } else {
-                print ("Phil: Successfully authenticated with Firebase")
+                print ("Admin: Successfully authenticated with Firebase")
             }
         })
+    }
+    @IBAction func signInTapped(_ sender: AnyObject) {
+        if let email = emailField.text, let pwd = passwordField.text {
+            Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                if error == nil {
+                    print("Admin: Email user authenticated with Firebase")
+                } else {
+                    Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            print("Admin: Unable to authenticate with Firebase using email")
+                        } else {
+                            print("Admin: Successfully authenticated with Firebase")
+                        }
+                    })
+                }
+            })
+        }
     }
 }
 
