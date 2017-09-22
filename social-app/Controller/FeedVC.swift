@@ -5,6 +5,8 @@
 //  Created by Philipp Jahn on 15.09.17.
 //  Copyright © 2017 Rollin Donkey. All rights reserved.
 //
+//  Copyright © icons8.com for all used icons
+//
 
 import UIKit
 import Firebase
@@ -21,6 +23,7 @@ class FeedVC: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
+    
     @IBAction func signInTapped(_ sender: AnyObject) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print ("Admin: ID removed from keychain \(keychainResult)")
