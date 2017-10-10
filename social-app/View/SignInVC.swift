@@ -15,15 +15,32 @@ import Firebase
 import SwiftKeychainWrapper
 
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordField: FunctionalField!
     
     @IBOutlet weak var emailField: FunctionalField!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.passwordField.delegate = self
+        self.emailField.delegate = self
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordField.resignFirstResponder()
+        emailField.resignFirstResponder()
+        return (true)
     }
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){

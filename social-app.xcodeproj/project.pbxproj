@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3D6A3C1F8BC6B400E073D0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D6A3B1F8BC6B400E073D0 /* PostCell.swift */; };
 		8B4825B31F5C7C92009AA155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4825B21F5C7C92009AA155 /* AppDelegate.swift */; };
 		8B4825B51F5C7C92009AA155 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4825B41F5C7C92009AA155 /* SignInVC.swift */; };
 		8B4825B81F5C7C92009AA155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4825B61F5C7C92009AA155 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		8133F4EF274CA0040E4D9F87 /* Pods_social_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_social_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B02122A1F609144009F1B5E /* Pods-social-app.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-social-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-social-app/Pods-social-app.debug.xcconfig"; sourceTree = "<group>"; };
+		8B3D6A3B1F8BC6B400E073D0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		8B4825AF1F5C7C92009AA155 /* social-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "social-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4825B21F5C7C92009AA155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B4825B41F5C7C92009AA155 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInVC.swift; path = ../View/SignInVC.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				8BEECE461F6016BB00F6F138 /* FunctionalField.swift */,
 				8BEECE481F60224600F6F138 /* FunctionalBtn.swift */,
 				8BB3F3651F706CA400747AAF /* CircleView.swift */,
+				8B3D6A3B1F8BC6B400E073D0 /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				8BEECE401F5FFEFC00F6F138 /* FunctionalView.swift in Sources */,
 				8B4825B31F5C7C92009AA155 /* AppDelegate.swift in Sources */,
 				8BEECE431F60004500F6F138 /* Constants.swift in Sources */,
+				8B3D6A3C1F8BC6B400E073D0 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
