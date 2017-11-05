@@ -28,7 +28,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableview.delegate = self
         tableview.dataSource = self
         
-        
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
@@ -49,12 +48,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         let post = posts[indexPath.row]
-        print("Admin: \(post.caption)")
-        return tableview.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        
+        if let cell = tableview.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
+            cell.configureCell(post: post)
+            return cell
+        } else {
+            return PostCell()
+        }
     }
-    
-    
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
