@@ -284,10 +284,10 @@
                                                                         <constraint firstAttribute="height" constant="60" id="qRM-36-Qnq"/>
                                                                     </constraints>
                                                                 </stackView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-GH-UPQ">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-GH-UPQ">
                                                                     <rect key="frame" x="0.0" y="68" width="327" height="175.5"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jEA-yz-1DE">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jEA-yz-1DE">
                                                                     <rect key="frame" x="0.0" y="251.5" width="327" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -339,6 +339,7 @@
                                         <color key="backgroundColor" red="0.87066519259999997" green="0.87945979829999998" blue="0.87945979829999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="caption" destination="jEA-yz-1DE" id="egP-8O-NCN"/>
+                                            <outlet property="likeImg" destination="7Nf-I8-dly" id="LOI-iS-fMG"/>
                                             <outlet property="likesLbl" destination="bWa-cL-AeY" id="1Ac-nv-j7j"/>
                                             <outlet property="postImg" destination="pIz-GH-UPQ" id="zun-iv-Dvv"/>
                                             <outlet property="profileImg" destination="3Tq-0u-WO6" id="oiZ-Pi-nkE"/>
@@ -390,7 +391,6 @@
         <image name="add-post" width="88" height="88"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
-        <image name="placeholder" width="960" height="432"/>
         <image name="profile" width="100" height="100"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
